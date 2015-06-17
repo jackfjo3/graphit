@@ -3,5 +3,10 @@
 
 
 %h3 TRACKABLE
+%ul
+  - @trackables.each do |trackable|
+    %li= trackable.name
+    %li= trackable.kind
+    %br
 
 = render 'trackables/form'

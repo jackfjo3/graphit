@@ -8,6 +8,7 @@ class GraphsController < ApplicationController
 
   def show
     @graph = Graph.find(params[:id])
+    @trackables = @graph.trackables.all
   end
 
   def new
