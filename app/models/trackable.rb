@@ -1,3 +1,3 @@
 class Trackable < ActiveRecord::Base
-  belongs_to :graph
+  belongs_to :entry
 end

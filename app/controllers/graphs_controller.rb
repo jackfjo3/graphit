@@ -18,7 +18,7 @@ class GraphsController < ApplicationController
   def create
     @graph = current_user.graphs.build(graph_params)
     if @graph.save
-      redirect_to graphs_path
+      redirect_to @graph
     else
       render 'new'
     end

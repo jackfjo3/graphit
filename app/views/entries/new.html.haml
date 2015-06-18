@@ -1,0 +1,23 @@
+%h1 New Entry!
+
+%h3 Trackables
+
+- @trackables.each do |trackable|
+  %h4= trackable.name
+  - simple_form_for trackable, html: { multipart: true } do |f|
+    - if trackable.errors.any?
+      #errors
+        %p
+          = trackable.errors.count
+          Prevented this recipe from saving.
+        %ul
+          - trackable.errors.full_messages.each do |msg|
+            %li = msg
+  
+    = f.input trackable.name.to_symb,   input_html: { class: 'form-control'}
+/  - if trackable.kind == 'slider'
+/   - render 'slider' # might have to pass |trackable| into 'slider'
+
+
+%br
+= f.button :submit, class: "btn btn-primary"

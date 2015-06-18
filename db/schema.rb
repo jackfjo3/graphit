@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616015948) do
+ActiveRecord::Schema.define(version: 20150618173918) do
+
+  create_table "entries", force: :cascade do |t|
+    t.integer  "graph_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "graphs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150616015948) do
   create_table "trackables", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "graph_id"
+    t.integer  "entry_id"
     t.string   "name"
     t.string   "kind"
     t.integer  "value"
