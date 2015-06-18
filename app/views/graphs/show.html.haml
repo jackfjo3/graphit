@@ -7,13 +7,12 @@
 = link_to "New Entry", new_graph_entry_path(@graph.id), class: "btn btn-primary"
 
 %h3 
-  Trackables for 
-  = @graph.name
-%ul
-  - @trackables.each do |trackable|
-    %li= trackable.name
-    %li= trackable.kind
-    %br
+  Trackables
+  %ul
+    - @trackables.each do |trackable|
+      %li= trackable.name
+      %li= trackable.kind
+      %br
 
 %h3 Add New Trackable
 = render 'trackables/form'
