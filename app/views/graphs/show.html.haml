@@ -5,10 +5,8 @@
 %br
 
 - @trackables.each do |trackable|
-  = simple_form_for ([trackable, trackable.points.build]) do |f|
-    = trackable.name
-    = f.input :value,   input_html: { class: 'form-control'}
-    = f.button :submit, class: "btn btn-primary"
+  - render 'points/form', trackable: trackable
+  
 
 
 %h3 Add New Trackable
