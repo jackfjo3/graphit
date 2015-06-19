@@ -1,0 +1,6 @@
+= simple_form_for([@trackable, @trackable.points.build]) do |f|
+  
+  = f.input :value, input_html: { class: "form-control" }
+  
+  %br
+  = f.button :submit, class: "btn btn-default"  
