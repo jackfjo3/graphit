@@ -5,9 +5,18 @@
 %br
 
 - @trackables.each do |trackable|
-  - render 'points/form', trackable: trackable
+  - simple_form_for([@graph, trackable, trackable.points.build]) do |f|
+    
+    = f.input :value, input_html: { class: "form-control" }
+    
+    %br
+    = f.button :submit, class: "btn btn-default"  
+/  - render 'points/form', trackable: trackable
   
 
 
 %h3 Add New Trackable
 = render 'trackables/form'
+
+%ul
+  -
