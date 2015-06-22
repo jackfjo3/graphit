@@ -7,7 +7,7 @@ class TrackablesController < ApplicationController
     if @trackables.save
       redirect_to @graph
     else 
-      render 'new'
+      redirect_to @graph
     end
   end
 end

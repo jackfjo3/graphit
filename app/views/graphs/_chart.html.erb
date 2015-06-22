@@ -70,7 +70,7 @@
             // that in JavaScript, months start at 0 for January, 1 for February etc.
         <% @trackable_data = [] %>
         <% trackable.points. each do |point| %>
-            <% @trackable_data << [point.value, point.created_at.to_i*1000] %>
+            <% @trackable_data << [point.created_at.to_i*1000, point.value] %>
         <% end %>
             data: <%= @trackable_data %> 
             },
