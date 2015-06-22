@@ -2,11 +2,11 @@
   - if @graph.errors.any?
     #errors
       %p
-        = @grpah.errors.count
+        = @graph.errors.count
         Prevented this recipe from saving.
       %ul
         - @graph.errors.full_messages.each do |msg|
-          %li = msg
+          %li= msg
  
   = f.input :name, input_html: { class: 'form-control'}
 

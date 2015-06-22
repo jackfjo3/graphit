@@ -13,6 +13,13 @@ class GraphsController < ApplicationController
 
   def new
     @graph = current_user.graphs.build
+    if @graph.save
+      redirect_to @graph
+      #SUCCESS MESSAGE
+    else
+      render 'new'
+      #FAIL MESSAGE
+    end
   end
 
   def create

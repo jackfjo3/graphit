@@ -6,8 +6,10 @@ class TrackablesController < ApplicationController
 
     if @trackables.save
       redirect_to @graph
+      # Success message
     else 
       redirect_to @graph
+      # Failure message
     end
   end
 end
