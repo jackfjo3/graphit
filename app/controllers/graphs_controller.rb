@@ -3,7 +3,7 @@ class GraphsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @graphs = Graph.all.order('updated_at DESC')
+    @graphs = current_user.graphs.all.order('updated_at DESC')
   end
 
   def show
