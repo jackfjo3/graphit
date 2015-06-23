@@ -1,7 +1,3 @@
-= link_to "New Graph", new_graph_path
 
-%ul
-  - @graphs.each do |graph|
-    %li
-      %p
-        = link_to graph.name, graph
+
+= render @graphs # renders _graph partial and passes in each graph

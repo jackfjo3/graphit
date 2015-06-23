@@ -13,13 +13,6 @@ class GraphsController < ApplicationController
 
   def new
     @graph = current_user.graphs.build
-    if @graph.save
-      redirect_to @graph
-      #SUCCESS MESSAGE
-    else
-      render 'new'
-      #FAIL MESSAGE
-    end
   end
 
   def create
@@ -29,6 +22,12 @@ class GraphsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    Graph.find(params[:id]).destroy
+    flash[:success] = "Graph deleted"
+    redirect_to root_url
   end
 
 private

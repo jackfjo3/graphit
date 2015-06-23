@@ -1,29 +1,17 @@
-= link_to "Back", root_url
-
 %h1= @graph.name
 %br
 
+- if @graph.trackables.any?
+  = render 'chart'
 
-= render 'chart'
-
-
-- @trackables.each do |trackable|
-  - @points = trackable.points.all
-  - @points.each do |point|
-    = point.value
-
-  = simple_form_for([@graph, trackable, trackable.points.build]) do |f|
+  = render 'points/form'
     
-    = f.input :value, label: trackable.name, input_html: { class: "form-control" }
-    
-    %br
-    = f.button :submit, class: "btn btn-default"  
-/  - render 'points/form', trackable: trackable
-  
 
+  %br
+  %br
 
 %h3 Add New Trackable
 = render 'trackables/form'
 
-%ul
-  -
+%br
+= link_to "Delete Graph", @graph, method: :delete, data: { confirm: "Delete graph and trackables?"}, class: "btn btn-default" 

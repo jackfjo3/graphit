@@ -1,6 +1,6 @@
-- simple_form_for([@graph, trackable, trackable.points.build]) do |f|
-  
-  = f.input :value, input_html: { class: "form-control" }
-  
-  %br
-  = f.button :submit, class: "btn btn-default"  
+- @trackables.each do |trackable|
+  = simple_form_for([@graph, trackable, trackable.points.build]) do |f|
+    
+    = f.input :value, label: trackable.name, input_html: { class: "form-control" }
+    = f.button :submit, class: "btn btn-default"  
+    = link_to "Delete Trackable", trackable_path(trackable), method: :delete, data: { confirm: "Delete trackable?"}, class: "btn btn-default", id: "delete-trackable-btn" 
