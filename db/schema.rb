@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150619005635) do
 
-  create_table "entries", force: :cascade do |t|
-    t.integer  "graph_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "graphs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
